@@ -4,11 +4,11 @@ import mongoose from "mongoose";
 
 // const app = express();
 
-const DB_NAME = "NEt SAfe"
+const DB_NAME = "testing"
 
 const DB_Connection = async()=>{
     try{
-        const connectionInstance = await mongoose.connect(`${process.env.DATABASE_URL}/${DB_NAME}`);
+        const connectionInstance = await mongoose.connect(`${process.env.DATABASE_URL}${DB_NAME}`);
         console.log(` Mongodb Connection !! DB Host${connectionInstance.connection.host}`);
     }catch(e){
         console.log("MondoDb connection Error", e);
