@@ -12,8 +12,10 @@ app.use(express.json());
 
 dotenv.config({path : './env'});
 
-app.get('/', (req, res) =>{
-    res.send('Hello World');
+app.get('/getlink', async (req, res) =>{
+    const getLinks = await Links.find();
+
+    res.status(200).json({success:true,links: getLinks});
 })
 
 // app.post('/api', (req, res) =>{
